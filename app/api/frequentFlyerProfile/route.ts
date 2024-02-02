@@ -1,4 +1,4 @@
-export async function GET() {
+export async function GET(): Promise<Response> {
   const res = await fetch(
     "https://run.mocky.io/v3/ef7020e5-04a9-4f68-8f8f-ca49198f5396"
   );

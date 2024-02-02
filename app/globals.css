@@ -1,22 +1,92 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.wave {
-  border-radius: 0 0 50px 50px;
-  background-image: linear-gradient(
-    to bottom,
-    #385c93,
-    #2a5193,
-    #1d4692,
-    #133a90,
-    #102d8c
-  );
-}
-
 html,
 body,
 main,
 min-height {
   height: 100vh;
+}
+
+section {
+  background-color: rgba(0, 174, 255, 0.05);
+  border-radius: 25px;
+  margin: 20px;
+  max-height: max-content;
+  min-height: 70vh;
+  display: flex;
+  align-content: baseline;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(58 94 149);
+}
+
+p {
+  text-align: center;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  padding-top: 10px;
+}
+
+.home {
+  align-items: center;
+}
+
+.home-img {
+  width: 500px;
+}
+
+.ant-form {
+  color: rgb(58 94 149);
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+.ant-form-item {
+  display: flex;
+  align-items: center;
+}
+
+.ant-form-item .ant-form-item-label > label {
+  color: rgb(58, 94, 149);
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding-left: 10px;
+}
+
+.ant-form-item-control input {
+  color: rgb(58 94 149);
+  text-align: left;
+  font-size: 1.125rem;
+  background-color: transparent;
+  font-style: italic;
+}
+
+@media screen and (max-width: 500px) {
+  section {
+    min-height: 600px;
+  }
+  .css-dev-only-do-not-override-1b0bdye {
+    flex-direction: column;
+    align-items: flex-start;
+    display: flex;
+    padding: -10;
+    margin: 0;
+  }
+  .ant-row.ant-form-item-row.css-dev-only-do-not-override-1b0bdye {
+    display: flex;
+    width: 40%;
+    padding-top: 15px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
 }
