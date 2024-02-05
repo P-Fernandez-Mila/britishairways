@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Form, Spin } from "antd";
+import { API } from "../constants/strings.js";
 
 interface FrequentFlyerProfile {
   name?: string;
@@ -15,9 +16,7 @@ export function Profile() {
   useEffect(() => {
     const getFrequentFlyerProfile = async () => {
       try {
-        const response = await fetch(
-          "http://localhost:3000/api/frequentFlyerProfile"
-        );
+        const response = await fetch(`${API}/frequentFlyerProfile`);
         const data = await response.json();
         setFrequentFlyerProfile(data);
       } catch (error) {
@@ -44,20 +43,20 @@ export function Profile() {
               className=".profile-picture"
             />
           </Form.Item>
-          <Form.Item label="Name">
-            <input
-              aria-label="name"
-              disabled={true}
-              value={frequentFlyerProfile.name}
-            ></input>
+          <Form.Item label="Name" name="name" valuePropName="name">
+            <input disabled={true} value={frequentFlyerProfile.name}></input>
           </Form.Item>
-          <Form.Item label="Last Name">
+          <Form.Item label="Last Name" name="lastName" valuePropName="lastname">
             <input
               disabled={true}
               value={frequentFlyerProfile.lastName}
             ></input>
           </Form.Item>
-          <Form.Item label="Date of Birth">
+          <Form.Item
+            label="Date of Birth"
+            name="dateOfBirth"
+            valuePropName="dateofbirth"
+          >
             <input
               disabled={true}
               value={frequentFlyerProfile.dateOfBirth}

@@ -3,14 +3,17 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { describe } from "node:test";
 import Home from "@/page";
+import {
+  WELCOME_MESSAGE,
+  COME_IN_MESSAGE,
+  DISCLAIMER_HOME,
+} from "../../app/constants/strings";
 
 describe("Validate Layout", () => {
   it("Validate Header, paragraphs and image", () => {
-    const headerText: string = "Welcome to British Airways";
-    const paragraph1: string =
-      "Hello, please come in, have a seat, make yourself comfortable while we finish preparing this app for you";
-    const paragraph2: string =
-      "⚠️ This site use mock data, so the information present here is not real";
+    const headerText: string = WELCOME_MESSAGE;
+    const paragraph1: string = COME_IN_MESSAGE;
+    const paragraph2: string = DISCLAIMER_HOME;
 
     render(<Home />);
     const header: HTMLElement = screen.getByRole("heading");

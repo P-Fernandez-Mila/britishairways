@@ -33,6 +33,7 @@ const NavBar: React.FC<NavBarProps> = ({ isLogged }) => {
           size={50}
           icon={<UserOutlined />}
           alt="profile picture"
+          style={{ backgroundColor: "rgb(58 94 149)", color: "#FFFFFF" }}
         ></Avatar>
       </Link>
     </div>
