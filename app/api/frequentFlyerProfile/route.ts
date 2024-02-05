@@ -12,7 +12,5 @@ export async function GET(): Promise<Response> {
     dateOfBirth: frequentFlyerProfile.dateOfBirth,
   };
 
-  console.log(personalData);
-
   return Response.json(personalData);
 }

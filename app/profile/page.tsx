@@ -8,19 +8,12 @@ interface FrequentFlyerProfile {
   dateOfBirth?: string;
 }
 
-const inputLayout: React.CSSProperties = {
-  color: "rgb(58 94 149)",
-  fontSize: "1.125rem",
-  lineHeight: "1.75rem",
-  paddingTop: "10px",
-  background: "transparent",
-};
 export function Profile() {
   const [frequentFlyerProfile, setFrequentFlyerProfile] =
     useState<FrequentFlyerProfile | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getFrequentFlyerProfile = async () => {
       try {
         const response = await fetch(
           "http://localhost:3000/api/frequentFlyerProfile"
@@ -32,7 +25,7 @@ export function Profile() {
       }
     };
 
-    fetchData();
+    getFrequentFlyerProfile();
   }, []);
 
   return (

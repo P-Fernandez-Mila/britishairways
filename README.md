@@ -21,12 +21,27 @@ On the same NextJS project I created a FE using React for the UI components and 
 
 Due to the tidy schedule I will implement the feature 100% before moving to the next feature, the style was implemented taking a mobile first approach and it is a secondary aspect of this project, I prioritize functionality over design.
 
+Design and business purpose of the app:
+The solution aims to provide British Airways customer the tool to check their incoming flights, check they points and miles balance, also It would be nice to have a catalog of a ancillaries for the user to spend their miles, and points.
+
+## **Design**
+
+<img src="/image.png" alt="image" width="50%" height="auto">
+TODO
+Check design sketch vs actual implementation
+
 ## **Quick start**
 
 To run the project you must copy this repo, install it and run `npm run dev`
 
 ## **Test**
 
-Test will be running with Jest using ``npm test`
+Test will be running with Jest using `npm test`
 
-Coverage report can be triggered by ``npm coverage`
+Coverage report can be triggered by `npm coverage`
+
+## **Tech debt**
+
+- Increase coverage
+- Add a DB
+- Containerization of the solution, I need to learn to use docker first
