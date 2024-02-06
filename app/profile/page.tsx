@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Form, Spin } from "antd";
+import { Form, Spin, Input } from "antd";
 import { API } from "../constants/strings.js";
 
 interface FrequentFlyerProfile {
@@ -9,7 +9,7 @@ interface FrequentFlyerProfile {
   dateOfBirth?: string;
 }
 
-export function Profile() {
+const Profile: React.FC = () => {
   const [frequentFlyerProfile, setFrequentFlyerProfile] =
     useState<FrequentFlyerProfile | null>(null);
 
@@ -44,23 +44,23 @@ export function Profile() {
             />
           </Form.Item>
           <Form.Item label="Name" name="name" valuePropName="name">
-            <input disabled={true} value={frequentFlyerProfile.name}></input>
+            <Input disabled={true} value={frequentFlyerProfile.name}></Input>
           </Form.Item>
           <Form.Item label="Last Name" name="lastName" valuePropName="lastname">
-            <input
+            <Input
               disabled={true}
               value={frequentFlyerProfile.lastName}
-            ></input>
+            ></Input>
           </Form.Item>
           <Form.Item
             label="Date of Birth"
             name="dateOfBirth"
             valuePropName="dateofbirth"
           >
-            <input
+            <Input
               disabled={true}
               value={frequentFlyerProfile.dateOfBirth}
-            ></input>
+            ></Input>
           </Form.Item>
         </Form>
       ) : (
@@ -73,6 +73,6 @@ export function Profile() {
       )}
     </section>
   );
-}
+};
 
 export default Profile;

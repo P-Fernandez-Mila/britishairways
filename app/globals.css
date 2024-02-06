@@ -37,7 +37,21 @@ p {
   padding-top: 10px;
 }
 
-.home {
+.css-dev-only-do-not-override-1rqnfsa.ant-btn-primary,
+.ant-checkbox-inner {
+  background-color: rgb(58 94 149);
+}
+
+#basic
+  > div:nth-child(3)
+  > div
+  > div
+  > div
+  > div
+  > label
+  > span.ant-checkbox.ant-wave-target.css-dev-only-do-not-override-1rqnfsa.ant-checkbox-checkeed
+  > span
+  .home {
   align-items: center;
 }
 
@@ -56,7 +70,8 @@ p {
   align-items: center;
 }
 
-.ant-form-item .ant-form-item-label > label {
+.ant-form-item .ant-form-item-label > label,
+.ant-checkbox-inner {
   color: rgb(58, 94, 149);
   font-size: 1.125rem;
   font-weight: 600;

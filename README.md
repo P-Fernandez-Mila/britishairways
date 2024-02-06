@@ -42,6 +42,7 @@ Coverage report can be triggered by `npm coverage`
 
 ## **Tech debt**
 
+- This is my first NextJS project, need more polishing
 - Increase coverage
 - Add a DB
 - Containerization of the solution, I need to learn to use docker first
