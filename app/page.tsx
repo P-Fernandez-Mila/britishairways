@@ -1,4 +1,5 @@
 "use client";
+import { Alert } from "antd";
 import "./globals.css";
 import {
   WELCOME_MESSAGE,

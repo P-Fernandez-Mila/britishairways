@@ -24,6 +24,8 @@ Due to the tidy schedule I will implement the feature 100% before moving to the 
 Design and business purpose of the app:
 The solution aims to provide British Airways customer the tool to check their incoming flights, check they points and miles balance, also It would be nice to have a catalog of a ancillaries for the user to spend their miles, and points.
 
+Login is dummy, any input will change a flag that tracks if the user is logged in or not, this was made to save time to develop main features
+
 ## **Design**
 
 <img src="/image.png" alt="image" width="50%" height="auto">
@@ -46,3 +48,7 @@ Coverage report can be triggered by `npm coverage`
 - Increase coverage
 - Add a DB
 - Containerization of the solution, I need to learn to use docker first
+
+
+## **Pages that are nice to have**
+-  Create Account 

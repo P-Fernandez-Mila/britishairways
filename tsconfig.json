@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/components/Navbar.tsx"
-, "_test_/pages/profile/page.test.js"  ],
+, "_test_/pages/profile/page.test.js", "app/login/page.tsx"  ],
   "exclude": ["node_modules"]
 }
