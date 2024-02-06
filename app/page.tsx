@@ -1,5 +1,4 @@
-"use client";
-import { Alert } from "antd";
+import React from "react";
 import "./globals.css";
 import {
   WELCOME_MESSAGE,
@@ -8,17 +7,21 @@ import {
 } from "./constants/strings";
 
 const Home: React.FC = () => {
+  const welcomeMessage: string = WELCOME_MESSAGE;
+  const comeInMessage: string = COME_IN_MESSAGE;
+  const disclaimerHome: string = DISCLAIMER_HOME;
+
   return (
     <section>
       <div className="p-10 flex flex-col h-full home m-auto">
-        <h1>{WELCOME_MESSAGE}</h1>
-        <p className="text-center text-lg pt-10">{COME_IN_MESSAGE}</p>
+        <h1>{welcomeMessage}</h1>
+        <p className="text-center text-lg pt-10">{comeInMessage}</p>
         <img
           className="pt-10 home-img"
           src="/images/basic-economy.webp"
           alt="Home Image"
         ></img>
-        <p className="text-center text-lg pt-10">{DISCLAIMER_HOME}</p>
+        <p className="text-center text-lg pt-10">{disclaimerHome}</p>
       </div>
     </section>
   );

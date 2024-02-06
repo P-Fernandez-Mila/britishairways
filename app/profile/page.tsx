@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Form, Spin, Input } from "antd";
-import { API } from "../constants/strings.js";
+import { API } from "../constants/strings";
 
 interface FrequentFlyerProfile {
   name?: string;
@@ -44,12 +44,12 @@ const Profile: React.FC = () => {
             />
           </Form.Item>
           <Form.Item label="Name" name="name" valuePropName="name">
-            <Input disabled={true} value={frequentFlyerProfile.name}></Input>
+            <Input disabled={true} value={frequentFlyerProfile?.name}></Input>
           </Form.Item>
           <Form.Item label="Last Name" name="lastName" valuePropName="lastname">
             <Input
               disabled={true}
-              value={frequentFlyerProfile.lastName}
+              value={frequentFlyerProfile?.lastName}
             ></Input>
           </Form.Item>
           <Form.Item
@@ -59,7 +59,7 @@ const Profile: React.FC = () => {
           >
             <Input
               disabled={true}
-              value={frequentFlyerProfile.dateOfBirth}
+              value={frequentFlyerProfile?.dateOfBirth}
             ></Input>
           </Form.Item>
         </Form>

@@ -1,17 +1,20 @@
-//This component was created to fix an issue related with the styles when the page loads, is related to NextJS and Antd
+// This component was created to fix an issue related with the styles when the page loads, is related to NextJS and Antd
 
 "use client";
 
-import React from "react";
-import { useServerInsertedHTML } from "next/navigation";
-import { StyleProvider, createCache, extractStyle } from "@ant-design/cssinjs";
+import React, { ReactNode, useState } from 'react';
+import { useServerInsertedHTML } from 'next/navigation';
+import { StyleProvider, createCache, extractStyle } from '@ant-design/cssinjs';
+
+// Define the type for the component's props
+interface AntdStyledComponentsRegistryProps {
+  children: ReactNode;
+}
 
 export default function AntdStyledComponentsRegistry({
   children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [cache] = React.useState(() => createCache()); // gets antd cached styles
+}: AntdStyledComponentsRegistryProps) {
+  const [cache] = useState(() => createCache()); // gets antd cached styles
 
   // insert cache style on the server
   useServerInsertedHTML(() => (

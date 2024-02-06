@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import { LoginStateContext } from "@/utils/LoginState";
 import { useRouter } from "next/navigation";
@@ -10,6 +9,7 @@ type FieldType = {
   password?: string;
   remember?: boolean;
 };
+
 const Login: React.FC = () => {
   const [, setIsLogged] = useContext(LoginStateContext);
   const router = useRouter();

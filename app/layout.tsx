@@ -1,5 +1,5 @@
 "use client";
-import type { Metadata } from "next";
+import React from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import AntdStyledComponentsRegistry from "./components/AntdStyledComponentsRegistry";
@@ -13,7 +13,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): JSX.Element {
   return (
     <html lang="en">
       <body className={inter.className}>

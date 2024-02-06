@@ -1,21 +1,22 @@
 "use client";
-import { useContext } from "react";
-import { Avatar, Button, Dropdown, MenuProps } from "antd";
+import React, { FC, useContext, MouseEvent } from "react";
+import { Avatar, Dropdown, MenuProps } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import { LoginStateContext } from "@/utils/LoginState";
 import { useRouter } from "next/navigation";
 
-const NavBar: React.FC = () => {
+const NavBar: FC = () => {
   const [isLogged, setIsLogged] = useContext(LoginStateContext);
   const router = useRouter();
-  const logout = (e: React.MouseEvent<HTMLAnchorElement>) => {
+
+  const logout = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsLogged(false);
     router.push("/");
   };
 
-  const guestItems = [
+  const guestItems: MenuProps["items"] = [
     {
       key: "1",
       label: (
@@ -41,7 +42,8 @@ const NavBar: React.FC = () => {
       ),
     },
   ];
-  const loggedItems = [
+
+  const loggedItems: MenuProps["items"] = [
     {
       key: "1",
       label: (
@@ -96,9 +98,11 @@ const NavBar: React.FC = () => {
       ),
     },
   ];
+
   const items: MenuProps["items"] = isLogged ? loggedItems : guestItems;
 
   const avatarSource: string | null = isLogged ? "/images/avatar.webp" : null;
+
   return (
     <div className="h-24 w-full flex items-center p-5">
       <Link href="/" className="cursor-pointer">
@@ -110,26 +114,20 @@ const NavBar: React.FC = () => {
             src="/images/logo-square.png"
             shape="square"
             alt="logo"
-          ></Avatar>
+          />
         }
       </Link>
 
       <div className="grow"></div>
-      <Dropdown
-        menu={{ items }}
-        placement="bottom"
-        arrow={{ pointAtCenter: true }}
-      >
+      <Dropdown overlayClassName="menu-class" menu={{ items }}>
         <Avatar
           src={avatarSource}
           className="flex-none order-last"
           size={50}
           icon={<UserOutlined />}
           alt="profile picture"
-          style={{ backgroundColor: "rgb(58 94 149)", color: "#FFFFFF" }}
-        >
-          <Button></Button>
-        </Avatar>
+          style={{ backgroundColor: "rgb(58, 94, 149)", color: "#FFFFFF" }}
+        />
       </Dropdown>
     </div>
   );

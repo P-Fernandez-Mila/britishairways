@@ -1,7 +1,4 @@
 "use client";
-import { Avatar, Button } from "antd";
-import { UserOutlined } from "@ant-design/icons";
-import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
