@@ -4,6 +4,8 @@ import { Form, Spin, Input, Alert, Collapse } from "antd";
 import type { CollapseProps } from "antd";
 import { API } from "../constants/strings";
 import LoyaltyInformationSection from "@/components/LoyaltyInformationSection";
+import ContactInformationSection from "@/components/ContactInformationSection";
+import Preferences from "@/components/PreferencesSection";
 
 interface FrequentFlyerProfile {
   name?: string;
@@ -17,11 +19,31 @@ interface LoyaltyData {
   pointsBalance: number;
 }
 
+interface ContactInformation {
+  email: string;
+  phone: string;
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    zipCode: string;
+    country: string;
+  };
+}
+interface Preferences {
+  seatPreference: string;
+  mealPreference: string;
+  specialAssistance: string;
+  newsletterSubscription: boolean;
+}
+
 const Profile: React.FC = () => {
   const [frequentFlyerProfile, setFrequentFlyerProfile] =
     useState<FrequentFlyerProfile | null>(null);
   const [loyaltyData, setLoyaltyData] = useState<LoyaltyData | null>(null);
-
+  const [contactInformation, setContactInformation] =
+    useState<ContactInformation | null>(null);
+  const [preferences, setPreferences] = useState<Preferences | null>(null);
   useEffect(() => {
     const getFrequentFlyerProfile = async () => {
       try {
@@ -29,6 +51,8 @@ const Profile: React.FC = () => {
         const data = await response.json();
         setFrequentFlyerProfile(data);
         setLoyaltyData(data.loyaltyData);
+        setContactInformation(data.contactInformation);
+        setPreferences(data.preferences);
       } catch (error) {
         console.error(error);
       }
@@ -37,27 +61,23 @@ const Profile: React.FC = () => {
     getFrequentFlyerProfile();
   }, []);
 
-  const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
-
   const items: CollapseProps["items"] = [
     {
       key: "1",
-      label: "Loyalty information",
+      label: "Executive Club information",
       children: <LoyaltyInformationSection loyaltyData={loyaltyData} />,
     },
     {
       key: "2",
       label: "Contact Information",
-      children: <p>{text}</p>,
+      children: (
+        <ContactInformationSection contactInformation={contactInformation} />
+      ),
     },
     {
       key: "3",
-      label: "Preferences",
-      children: <p>{text}</p>,
+      label: "⚙️ Preferences",
+      children: <Preferences preferences={preferences} />,
     },
   ];
 
@@ -71,7 +91,7 @@ const Profile: React.FC = () => {
       {frequentFlyerProfile ? (
         <>
           <Form className="m-0">
-            <Form.Item label="Avatar">
+            <Form.Item label="Profile Picture">
               <img
                 src={
                   "https://dollstoysngifts.co.uk/cdn/shop/products/the-simpsons-bart-simpson-with-skateboard-figpin-classic-3-inch-pin-870-747385.webp?v=1671044994"

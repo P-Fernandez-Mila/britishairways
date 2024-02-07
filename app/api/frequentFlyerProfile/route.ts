@@ -12,6 +12,23 @@ export async function GET(): Promise<Response> {
     tierStatus: string;
     milesBalance: number;
     pointsBalance: number;
+    contactInformation: {
+      email: string;
+      phone: string;
+      address: {
+        street: string;
+        city: string;
+        state: string;
+        zipCode: string;
+        country: string;
+      };
+    };
+    preferences: {
+      seatPreference: string;
+      mealPreference: string;
+      specialAssistance: string;
+      newsletterSubscription: boolean;
+    };
   };
 
   // Define a type for the expected API response structure
@@ -39,6 +56,23 @@ export async function GET(): Promise<Response> {
       milesBalance: number;
       pointsBalance: number;
     };
+    contactInformation: {
+      email: string;
+      phone: string;
+      address: {
+        street: string;
+        city: string;
+        state: string;
+        zipCode: string;
+        country: string;
+      };
+    };
+    preferences: {
+      seatPreference: string;
+      mealPreference: string;
+      specialAssistance: string;
+      newsletterSubscription: boolean;
+    };
   };
 
   // Extract the necessary data from the API response
@@ -50,6 +84,24 @@ export async function GET(): Promise<Response> {
       tierStatus: frequentFlyerProfile.tierStatus,
       milesBalance: frequentFlyerProfile.milesBalance,
       pointsBalance: frequentFlyerProfile.pointsBalance,
+    },
+    contactInformation: {
+      email: frequentFlyerProfile.contactInformation.email,
+      phone: frequentFlyerProfile.contactInformation.phone,
+      address: {
+        street: frequentFlyerProfile.contactInformation.address.street,
+        city: frequentFlyerProfile.contactInformation.address.city,
+        state: frequentFlyerProfile.contactInformation.address.state,
+        zipCode: frequentFlyerProfile.contactInformation.address.zipCode,
+        country: frequentFlyerProfile.contactInformation.address.country,
+      },
+    },
+    preferences: {
+      seatPreference: frequentFlyerProfile.preferences.seatPreference,
+      mealPreference: frequentFlyerProfile.preferences.mealPreference,
+      specialAssistance: frequentFlyerProfile.preferences.specialAssistance,
+      newsletterSubscription:
+        frequentFlyerProfile.preferences.newsletterSubscription,
     },
   };
 
