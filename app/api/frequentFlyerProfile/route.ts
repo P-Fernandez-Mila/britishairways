@@ -100,9 +100,8 @@ export async function GET(): Promise<Response> {
       seatPreference: frequentFlyerProfile.preferences.seatPreference,
       mealPreference: frequentFlyerProfile.preferences.mealPreference,
       specialAssistance: frequentFlyerProfile.preferences.specialAssistance,
-      newsletterSubscription:
-        frequentFlyerProfile.preferences.newsletterSubscription,
-    },
+      newsletterSubscription: frequentFlyerProfile.preferences.newsletterSubscription,
+    }
   };
 
   return new Response(JSON.stringify(personalData), {

@@ -47,8 +47,10 @@ Coverage report can be triggered by `npm coverage`
 - This is my first NextJS project, need more polishing
 - Increase coverage
 - Add a DB
+- Login dummy
+- Data is not linked properly, the data is mocked so the trace between PNR and flights is not present, data is used to simulate the UI but without real data, may be solved with a DB
 - Containerization of the solution, I need to learn to use docker first
 
-
 ## **Pages that are nice to have**
--  Create Account 
+
+- Create Account

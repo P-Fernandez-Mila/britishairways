@@ -2,7 +2,7 @@
 
 const Footer: React.FC = () => {
   return (
-    <div className="h-10 w-100 text-white w-full bg-black bottom-0 flex justify-center items-center">
+    <div className="h-10 w-100 text-white w-full bg-black bottom-0 flex justify-center items-center relative">
       Powered by Globant
     </div>
   );

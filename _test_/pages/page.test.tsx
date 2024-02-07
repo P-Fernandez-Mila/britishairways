@@ -7,7 +7,7 @@ import {
   WELCOME_MESSAGE,
   COME_IN_MESSAGE,
   DISCLAIMER_HOME,
-} from "../../app/constants/strings";
+} from "@/constants/strings";
 
 describe("Validate Layout", () => {
   it("Validate Header, paragraphs and image", () => {
