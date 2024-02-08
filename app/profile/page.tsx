@@ -55,6 +55,12 @@ const Profile: React.FC = () => {
         setPreferences(data.preferences);
       } catch (error) {
         console.error(error);
+        return (
+          <Alert
+            message="Something went wrong please contact one of our stores to get support"
+            type="error"
+          />
+        );
       }
     };
 

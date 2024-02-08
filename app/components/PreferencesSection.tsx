@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import Input from "antd/es/input/Input";
+import { Input } from "antd";
 interface PreferencesProps {
   preferences: {
     seatPreference: string;
@@ -9,6 +9,7 @@ interface PreferencesProps {
     newsletterSubscription: boolean;
   } | null;
 }
+
 const Preferences: FC<PreferencesProps> = ({ preferences }) => {
   if (preferences !== null) {
     const {

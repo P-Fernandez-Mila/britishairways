@@ -30,7 +30,7 @@ export async function GET(): Promise<Response> {
 
   const frequentFlyerProfile: FrequentFlyerProfile = (posts as ApiResponse)
     .frequentFlyerProfile;
-  console.log(frequentFlyerProfile.upcomingFlights);
+
   // Define the type for the personal data to be returned
 
   // Extract the necessary data from the API response
