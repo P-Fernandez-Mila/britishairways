@@ -42,7 +42,8 @@ h3 {
   color: rgb(58 94 149);
 }
 
-p {
+p,
+a {
   text-align: center;
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -85,22 +86,31 @@ p {
   margin-left: 10px;
 }
 
-@media screen and (max-width: 500px) {
+.css-dev-only-do-not-override-1b0bdye {
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+  padding: -10;
+  margin: 0;
+}
+
+.ant-row.ant-form-item-row.css-dev-only-do-not-override-1b0bdye {
+  display: flex;
+  width: 40%;
+  padding-top: 15px;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+@media screen and (min-width: 501px) {
+  html,
+  body,
+  main,
+  min-height {
+    max-width: 800px;
+    margin: auto;
+  }
   section {
-    min-height: 600px;
-  }
-  .css-dev-only-do-not-override-1b0bdye {
-    flex-direction: column;
-    align-items: flex-start;
-    display: flex;
-    padding: -10;
-    margin: 0;
-  }
-  .ant-row.ant-form-item-row.css-dev-only-do-not-override-1b0bdye {
-    display: flex;
-    width: 40%;
-    padding-top: 15px;
-    flex-wrap: nowrap;
-    flex-direction: row;
+    max-width: 800px;
   }
 }

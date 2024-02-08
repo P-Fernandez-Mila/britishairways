@@ -108,7 +108,7 @@ const TripDetails: React.FC = () => {
           <ul className="border border-gray-300 rounded p-4 mb-4">
             {tripDetails.travelers.map((traveler, index) => (
               <li key={index}>
-                {traveler.firstName} {traveler.lastName} -{" "}
+                {traveler.firstName} {traveler.lastName} -
                 {passengerTypeConverter(traveler.passengerType)}
               </li>
             ))}

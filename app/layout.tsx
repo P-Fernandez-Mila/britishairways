@@ -19,10 +19,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <LoginStateProvider>
           <AntdStyledComponentsRegistry>
-            <div className="flex flex-col justify-between">
+            <div className="flex flex-col justify-between min-h-screen">
               <NavBar />
-              <div> {children}</div>
-
+              <div className="flex flex-col justify-start grow">{children}</div>
               <Footer></Footer>
             </div>
           </AntdStyledComponentsRegistry>

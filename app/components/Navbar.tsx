@@ -63,7 +63,7 @@ const NavBar: FC = () => {
     {
       key: "3",
       label: (
-        <Link target="_self" rel="noopener noreferrer" href="">
+        <Link target="_self" rel="noopener noreferrer" href="/milesAndPoints">
           Miles and Point
         </Link>
       ),
