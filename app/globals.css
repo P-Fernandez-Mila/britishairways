@@ -19,6 +19,7 @@ section {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+  padding-bottom: 50px;
 }
 
 h1 {
@@ -53,19 +54,6 @@ p {
   background-color: rgb(58 94 149);
 }
 
-#basic
-  > div:nth-child(3)
-  > div
-  > div
-  > div
-  > div
-  > label
-  > span.ant-checkbox.ant-wave-target.css-dev-only-do-not-override-1rqnfsa.ant-checkbox-checkeed
-  > span
-  .home {
-  align-items: center;
-}
-
 .home-img {
   width: 500px;
 }
@@ -89,12 +77,12 @@ p {
   padding-left: 10px;
 }
 
-.ant-form-item-control input {
+.ant-form-item-control input,
+#basic_password {
   color: rgb(58 94 149);
   text-align: left;
   font-size: 1.125rem;
-  background-color: transparent;
-  font-style: italic;
+  margin-left: 10px;
 }
 
 @media screen and (max-width: 500px) {

@@ -20,7 +20,7 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <div>
+      <div className="min-h-300px p-20 bg-[#6ebadd6f] m-5 rounded-lg">
         <Form
           name="basic"
           labelCol={{ span: 8 }}

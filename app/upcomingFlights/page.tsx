@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Spin, Alert } from "antd";
+import Link from "next/link";
 import { API } from "../constants/strings";
 
 interface Flight {
@@ -22,7 +23,6 @@ const Profile: React.FC = () => {
         const response = await fetch(`${API}/upComingFlights`);
         const data = await response.json();
         setUpComingFlights(data);
-        console.log(data);
       } catch (error) {
         console.error(error);
         return (
@@ -59,6 +59,12 @@ const Profile: React.FC = () => {
                 <p className="mb-1 text-left">
                   🗓️ Departure Date: {flight.departureDate}
                 </p>
+                <Link
+                  className="text-blue-500 hover:text-blue-700"
+                  href="/tripDetails"
+                >
+                  Trip full details
+                </Link>
               </div>
             ))}
           </div>
