@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { API } from "../constants/strings";
 import { Alert, Spin } from "antd";
+import { passengerTypeConverter } from "../utils/passengerTypeConverter";
 interface Segment {
   departureAirport: string;
   arrivalAirport: string;
@@ -82,18 +83,6 @@ const TripDetails: React.FC = () => {
 
     getFrequentFlyerProfile();
   }, []);
-
-  function passengerTypeConverter(passengerType: string) {
-    if (passengerType === "INF") {
-      return "Infant";
-    } else if (passengerType === "ADT") {
-      return "Adult";
-    } else if (passengerType === "CHD") {
-      return "Child";
-    } else {
-      return passengerType;
-    }
-  }
 
   return (
     <>

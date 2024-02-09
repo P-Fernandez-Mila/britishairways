@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/components/Navbar.tsx"
-, "_test_/pages/profile/page.test.tsx", "app/login/page.tsx", "app/utils/LoginState.tsx"  ],
+, "_test_/pages/profile/page.test.tsx", "app/login/page.tsx", "app/utils/LoginState.tsx", "app/components/Loader.js"  ],
   "exclude": ["node_modules"]
 }

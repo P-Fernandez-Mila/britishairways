@@ -64,15 +64,15 @@ const NavBar: FC = () => {
       key: "3",
       label: (
         <Link target="_self" rel="noopener noreferrer" href="/milesAndPoints">
-          Miles and Point
+          Miles and Points
         </Link>
       ),
     },
     {
       key: "4",
       label: (
-        <Link target="_self" rel="noopener noreferrer" href="">
-          Trip History
+        <Link target="_self" rel="noopener noreferrer" href="/myTrips">
+          My Trips
         </Link>
       ),
     },
@@ -104,30 +104,28 @@ const NavBar: FC = () => {
   const avatarSource: string | null = isLogged ? "/images/avatar.webp" : null;
 
   return (
-    <div className="h-24 w-full flex items-center p-5">
-      <Link href="/" className="cursor-pointer">
-        {
-          <Avatar
-            className="flex-none order-first w-12 m-"
-            size={120}
-            icon={<UserOutlined />}
-            src="/images/logo-square.png"
-            shape="square"
-            alt="logo"
-          />
-        }
-      </Link>
-
+    <div className="w-full flex items-top p-5">
+      <div className="flex items-start max-w-44">
+        <Link href="/" className="cursor-pointer">
+          <img
+            src="/images/640px-British_Airways_Logo.svg.png"
+            className="w-100"
+          ></img>
+        </Link>
+      </div>
       <div className="grow"></div>
       <Dropdown overlayClassName="menu-class" menu={{ items }}>
-        <Avatar
-          src={avatarSource}
-          className="flex-none order-last"
-          size={50}
-          icon={<UserOutlined />}
-          alt="profile picture"
-          style={{ backgroundColor: "rgb(58, 94, 149)", color: "#FFFFFF" }}
-        />
+        <div className="flex items-end">
+          {" "}
+          <Avatar
+            src={avatarSource}
+            className="flex-none order-last"
+            size={50}
+            icon={<UserOutlined />}
+            alt="profile picture"
+            style={{ backgroundColor: "rgb(58, 94, 149)", color: "#FFFFFF" }}
+          />
+        </div>
       </Dropdown>
     </div>
   );
