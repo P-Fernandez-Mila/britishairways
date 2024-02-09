@@ -2,7 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { Spin, Alert } from "antd";
 import Link from "next/link";
-import { API } from "../constants/strings";
+import {
+  API,
+  SERVER_RESPONSE_ERROR,
+  SERVER_RESPONSE_ERROR,
+  SERVER_RESPONSE_UNEXPECTED_ERROR,
+} from "../utils/constants/strings";
+import Loader from "@/components/Loader";
+import ErrorReturnToHome from "@/components/ErrorReturnToHome";
 
 interface Flight {
   flightNumber: string;
@@ -16,27 +23,33 @@ type UpComingFlights = Flight[];
 const Profile: React.FC = () => {
   const [upComingFlights, setUpComingFlights] =
     useState<UpComingFlights | null>(null);
-
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     const getFrequentFlyerProfile = async () => {
       try {
         const response = await fetch(`${API}/upComingFlights`);
+        if (!response.ok) {
+          setError(SERVER_RESPONSE_ERROR);
+          throw new Error(SERVER_RESPONSE_ERROR);
+        }
         const data = await response.json();
-        setUpComingFlights(data);
-      } catch (error) {
-        console.error(error);
-        return (
-          <Alert
-            message="Something went wrong please contact one of our stores to get support"
-            type="error"
-          />
-        );
+        if ("error" in data) {
+          setError(data.error);
+        } else {
+          setUpComingFlights(data);
+        }
+      } catch (err) {
+        setError(SERVER_RESPONSE_UNEXPECTED_ERROR);
+      } finally {
+        setLoading(false);
       }
     };
 
     getFrequentFlyerProfile();
   }, []);
-
+  if (loading) return <Loader />;
+  if (error) return <ErrorReturnToHome error={error} />;
   return (
     <section>
       <div className=" w-full">

@@ -2,10 +2,9 @@ export async function GET(): Promise<Response> {
   const res = await fetch(
     "https://run.mocky.io/v3/ef7020e5-04a9-4f68-8f8f-ca49198f5396"
   );
-  const posts = await res.json();
+  const data = await res.json();
 
-  // Define a type for the expected structure of frequentFlyerProfile
-
+  // Define a type for the expected structure
   type Travel = {
     year: string;
     flightsTaken: number;
@@ -24,13 +23,13 @@ export async function GET(): Promise<Response> {
     frequentFlyerProfile: FrequentFlyerProfile;
   };
   // Check if the posts object is of type ApiResponse
-  if (!("travelHistory" in posts.frequentFlyerProfile)) {
+  if (!("travelHistory" in data.frequentFlyerProfile)) {
     throw new Error(
       "The API response does not contain the expected travelHistory field."
     );
   }
 
-  const frequentFlyerProfile: FrequentFlyerProfile = (posts as ApiResponse)
+  const frequentFlyerProfile: FrequentFlyerProfile = (data as ApiResponse)
     .frequentFlyerProfile;
 
   // Define the type for the personal data to be returned

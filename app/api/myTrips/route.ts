@@ -2,7 +2,7 @@ export async function GET(): Promise<Response> {
   const res = await fetch(
     "https://run.mocky.io/v3/c648e1f6-a12e-4bee-a810-e7d7097089cf"
   );
-  const posts = await res.json();
+  const data = await res.json();
 
   interface Passenger {
     firstName: string;
@@ -29,7 +29,7 @@ export async function GET(): Promise<Response> {
   // Define a type for the expected API response structure
   type ApiResponse = Trips[];
   // Convert posts object to ApiResponse type
-  const myTrips: ApiResponse = posts as ApiResponse;
+  const myTrips: ApiResponse = data as ApiResponse;
 
   // Check if all passengers are the same
   const allSamePassenger = myTrips.every(

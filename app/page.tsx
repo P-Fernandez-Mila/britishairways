@@ -4,7 +4,7 @@ import {
   WELCOME_MESSAGE,
   COME_IN_MESSAGE,
   DISCLAIMER_HOME,
-} from "./constants/strings";
+} from "./utils/constants/strings";
 
 const Home: React.FC = () => {
   const welcomeMessage: string = WELCOME_MESSAGE;

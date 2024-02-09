@@ -2,7 +2,7 @@ export async function GET(): Promise<Response> {
   const res = await fetch(
     "https://run.mocky.io/v3/c18fc4dd-3aa7-4b0a-822e-cb0118ec7a09"
   );
-  const posts = await res.json();
+  const data = await res.json();
 
   // Define the response interfaces
   interface Segment {
@@ -59,12 +59,12 @@ export async function GET(): Promise<Response> {
   };
 
   // Check if the posts object is of type ApiResponse
-  if (!("pnr" in posts)) {
+  if (!("pnr" in data)) {
     throw new Error(
       "The API response does not contain the expected tripDetails field."
     );
   }
-  const tripDetails: TripDetails = posts;
+  const tripDetails: TripDetails = data;
   return new Response(JSON.stringify(tripDetails), {
     headers: { "Content-Type": "application/json" },
   });

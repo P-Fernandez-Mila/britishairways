@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import Link from "next/link";
+import { createLoyaltyURL } from "@/utils/constants/strings";
 interface LoyaltyInformationSectionProps {
   loyaltyData: {
     tierStatus: string;
@@ -12,7 +13,7 @@ const LoyaltyInformationSection: FC<LoyaltyInformationSectionProps> = ({
 }) => {
   if (loyaltyData !== null) {
     const { tierStatus, milesBalance, pointsBalance } = loyaltyData;
-    const loyaltyURL: string = `https://www.britishairways.com/en-gb/executive-club/tiers-and-benefits/${tierStatus.toLowerCase()}-benefits`;
+    const loyaltyURL: string = createLoyaltyURL(tierStatus);
     return (
       <div className="flex flex-col items-start ">
         <p>Tier: {tierStatus}</p>

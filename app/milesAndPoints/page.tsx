@@ -1,7 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Spin, Alert, Table } from "antd";
-import { API } from "../constants/strings";
+import { Spin, Table } from "antd";
+import Loader from "@/components/Loader";
+import ErrorReturnToHome from "@/components/ErrorReturnToHome";
+import {
+  API,
+  SERVER_RESPONSE_ERROR,
+  SERVER_RESPONSE_UNEXPECTED_ERROR,
+  createLoyaltyURL,
+} from "../utils/constants/strings";
 import Link from "next/link";
 
 interface Travel {
@@ -21,20 +28,26 @@ const Profile: React.FC = () => {
   const [milesAndPoints, setMilesAndPoints] = useState<MilesAndPoints | null>(
     null
   );
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     const getMilesAndPoints = async () => {
       try {
         const response = await fetch(`${API}/milesAndPoints`);
-        const data = await response.json();
-        setMilesAndPoints(data);
-        console.log(data);
-      } catch (error) {
-        return (
-          <Alert
-            message="Something went wrong please contact one of our stores to get support"
-            type="error"
-          />
-        );
+        if (!response.ok) {
+          setError(SERVER_RESPONSE_ERROR);
+          throw new Error(SERVER_RESPONSE_ERROR);
+        }
+        const data: MilesAndPoints | { error: string } = await response.json();
+        if ("error" in data) {
+          setError(data.error);
+        } else {
+          setMilesAndPoints(data);
+        }
+      } catch (err) {
+        setError(SERVER_RESPONSE_UNEXPECTED_ERROR);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -68,7 +81,16 @@ const Profile: React.FC = () => {
       className: "bg-gray-200",
     },
   ];
-  const loyaltyURL: string = `https://www.britishairways.com/en-gb/executive-club/tiers-and-benefits/${milesAndPoints?.tierStatus.toLowerCase()}-benefits`;
+
+  if (loading) return <Loader />;
+  if (error) return <ErrorReturnToHome error={error} />;
+  if (!milesAndPoints)
+    return (
+      <div>
+        <p>No data found</p>
+      </div>
+    );
+
   return (
     <div>
       <h1 className="text-2xl font-bold mb-4">Frequent Flyer Profile</h1>
@@ -87,7 +109,10 @@ const Profile: React.FC = () => {
               <span className="font-bold">Points Balance:</span>{" "}
               {milesAndPoints?.pointsBalance}
             </p>
-            <Link href={loyaltyURL} className="text-blue-500 w-full">
+            <Link
+              href={createLoyaltyURL(milesAndPoints?.tierStatus)}
+              className="text-blue-500 w-full"
+            >
               Check your benefits!
             </Link>
             <h3 className="text-lg font-bold mt-6 mb-2">Travel History</h3>
@@ -113,31 +138,3 @@ const Profile: React.FC = () => {
 };
 
 export default Profile;
-
-/*     <div>
-      milesAndPoints ? (
-      <div className="bg-gray-100 p-4">
-        <h2 className="text-2xl font-bold mb-4">Frequent Flyer Profile</h2>
-        <p className="mb-2">
-          <span className="font-bold">Tier Status:</span>{" "}
-          {milesAndPoints?.tierStatus}
-        </p>
-        <p className="mb-2">
-          <span className="font-bold">Miles Balance:</span>{" "}
-          {milesAndPoints?.milesBalance}
-        </p>
-        <p className="mb-2">
-          <span className="font-bold">Points Balance:</span>{" "}
-          {milesAndPoints?.pointsBalance}
-        </p>
-        <h3 className="text-lg font-bold mt-6 mb-2">Travel History</h3>
-        <Table
-          className="w-full border-collapse"
-          dataSource={dataSource}
-          columns={columns}
-          bordered
-        />
-      </div>
-      ) : (<div>Loader</div>
-      );
-    </div>*/
