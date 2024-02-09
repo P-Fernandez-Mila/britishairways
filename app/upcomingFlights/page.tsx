@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Spin, Alert } from "antd";
+import { Spin } from "antd";
 import Link from "next/link";
 import {
   API,
-  SERVER_RESPONSE_ERROR,
   SERVER_RESPONSE_ERROR,
   SERVER_RESPONSE_UNEXPECTED_ERROR,
 } from "../utils/constants/strings";
