@@ -2,12 +2,21 @@
 import React, { useEffect, useState } from "react";
 import { Form, Input, Alert, Collapse } from "antd";
 import type { CollapseProps } from "antd";
-import { API, SERVER_RESPONSE_ERROR, SERVER_RESPONSE_UNEXPECTED_ERROR } from "../utils/constants/strings";
+import {
+  API,
+  SERVER_RESPONSE_ERROR,
+  SERVER_RESPONSE_UNEXPECTED_ERROR,
+} from "../utils/constants/strings";
 import LoyaltyInformationSection from "@/components/LoyaltyInformationSection";
 import ContactInformationSection from "@/components/ContactInformationSection";
 import Preferences from "@/components/PreferencesSection";
 import Loader from "@/components/Loader";
 import ErrorReturnToHome from "@/components/ErrorReturnToHome";
+import {
+  EXECUTIVE_CLUB,
+  CONTACT_INFORMATION,
+  PREFERENCES,
+} from "../utils/constants/strings";
 
 interface FrequentFlyerProfile {
   name?: string;
@@ -53,13 +62,11 @@ const Profile: React.FC = () => {
     const getFrequentFlyerProfile = async () => {
       try {
         const response = await fetch(`${API}/frequentFlyerProfile`);
+        const data = await response.json();
         if (!response.ok) {
           setError(SERVER_RESPONSE_ERROR);
-          throw new Error(SERVER_RESPONSE_ERROR);
-        }
-        const data = await response.json();
-        if ("error" in data) {
           setError(data.error);
+          throw new Error(SERVER_RESPONSE_ERROR);
         } else {
           setFrequentFlyerProfile(data);
           setLoyaltyData(data.loyaltyData);
@@ -79,25 +86,29 @@ const Profile: React.FC = () => {
   const items: CollapseProps["items"] = [
     {
       key: "1",
-      label: "Executive Club information",
+      label: EXECUTIVE_CLUB,
       children: <LoyaltyInformationSection loyaltyData={loyaltyData} />,
     },
     {
       key: "2",
-      label: "Contact Information",
+      label: CONTACT_INFORMATION,
       children: (
         <ContactInformationSection contactInformation={contactInformation} />
       ),
     },
     {
       key: "3",
-      label: "⚙️ Preferences",
+      label: PREFERENCES,
       children: <Preferences preferences={preferences} />,
     },
   ];
   if (loading) return <Loader />;
-  if (error) return <ErrorReturnToHome error={error} />;
-  return (
+
+  return error ? (
+    <div>
+      <ErrorReturnToHome error={error} />
+    </div>
+  ) : (
     <section>
       <h1 className="m-10 w-100">Frequent Flyer Profile</h1>
       <Alert

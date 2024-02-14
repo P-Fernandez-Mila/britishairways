@@ -112,6 +112,7 @@ const Profile: React.FC = () => {
             <Link
               href={createLoyaltyURL(milesAndPoints?.tierStatus)}
               className="text-blue-500 w-full"
+              target="_blank"
             >
               Check your benefits!
             </Link>

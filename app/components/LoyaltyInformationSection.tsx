@@ -19,7 +19,9 @@ const LoyaltyInformationSection: FC<LoyaltyInformationSectionProps> = ({
         <p>Tier: {tierStatus}</p>
         <p>Miles: {milesBalance}</p>
         <p>Points: {pointsBalance}</p>
-        <Link href={loyaltyURL}>Check your benefits!</Link>
+        <Link href={loyaltyURL} target="_blank">
+          Check your benefits!
+        </Link>
       </div>
     );
   } else {

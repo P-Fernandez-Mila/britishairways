@@ -1,5 +1,11 @@
 // API
 export const API: string = "http://localhost:3000/api/";
+//Generic Error messages
+export const SERVER_RESPONSE_ERROR: string =
+  "There was an error on the server call, please contact one of our stores to get support.";
+
+export const SERVER_RESPONSE_UNEXPECTED_ERROR: string =
+  "There was an error on the server call,please contact one of our stores to get support.";
 
 // HOME PAGE
 export const WELCOME_MESSAGE: string = "Welcome to British Airways";
@@ -13,9 +19,7 @@ export function createLoyaltyURL(tierStatus: string) {
   return `https://www.britishairways.com/en-gb/executive-club/tiers-and-benefits/${tierStatus.toLowerCase()}-benefits`;
 }
 
-//Generic Error messages
-export const SERVER_RESPONSE_ERROR: string =
-  "There was an error on the server call, please contact one of our stores to get support.";
-
-export const SERVER_RESPONSE_UNEXPECTED_ERROR: string =
-  "There was an error on the server call,please contact one of our stores to get support.";
+//PROFILE PAGE
+export const EXECUTIVE_CLUB = "Executive Club information";
+export const CONTACT_INFORMATION = "Contact Information";
+export const PREFERENCES = "⚙️ Preferences";

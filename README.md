@@ -45,7 +45,7 @@ Coverage report can be triggered by `npm coverage`
 ## **Tech debt**
 
 - This is my first NextJS project, need more polishing
-- Increase coverage
+- Increase coverage, the expected test coverage is applied for the Profile page. I need to reply this approach for all components
 - Add a DB
 - Login dummy
 - Data is not linked properly, the data is mocked so the trace between PNR and flights is not present, data is used to simulate the UI but without real data, may be solved with a DB
