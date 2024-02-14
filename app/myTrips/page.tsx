@@ -79,6 +79,9 @@ const ItineraryList: React.FC = () => {
         <h1 className="text-2xl font-bold mb-4">My trips</h1>
         <p className="mb-2">
           <strong>Name:</strong> {myTrips.passenger.firstName}
+        </p>
+        <p className="mb-2">
+          <strong>Lastname:</strong>
           {myTrips.passenger.lastName}
         </p>
         <p className="mb-4">
