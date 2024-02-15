@@ -1,7 +1,5 @@
 # Welcome to British Airways MVP
 
-**Disclaimer:** This project is not ready yet, is under development.
-
 ## **Stack**
 
 This project has the following stack:
@@ -38,17 +36,18 @@ To run the project you must copy this repo, install it and run `npm run dev`
 
 ## **Test**
 
-Test will be running with Jest using `npm test`
+Tests are executed with Jest using `npm test`
 
 Coverage report can be triggered by `npm coverage`
 
 ## **Tech debt**
 
 - This is my first NextJS project, need more polishing
-- Increase coverage, the expected test coverage is applied for the Profile page. I need to reply this approach for all components
-- Add a DB
-- Login dummy
+- Increase coverage, the expected test coverage is applied for the Profile page. I need to reply this approach for all components, on the profile page I covered more than 60% to shown the approach that will be applied to each component and scenario
+- Add a DB, to allow users create account and an actual login
+- Login dummy, implement an authentication method that saves session on local storage.
 - Data is not linked properly, the data is mocked so the trace between PNR and flights is not present, data is used to simulate the UI but without real data, may be solved with a DB
+- Search is hardcoded to check if the entered last name and pnr exist on the current endpoint response, if exist the endpoint is called and the data is retrieved, if not the system calls the 404 endpoint
 - Containerization of the solution, I need to learn to use docker first
 
 ## **Pages that are nice to have**
