@@ -50,6 +50,16 @@ Coverage report can be triggered by `npm coverage`
 - Search is hardcoded to check if the entered last name and pnr exist on the current endpoint response, if exist the endpoint is called and the data is retrieved, if not the system calls the 404 endpoint
 - Containerization of the solution, I need to learn to use docker first
 
+## **Milestones**:
+
+- [x] README documentation
+- [x]Project setup: setup environment: react or react-native, NextJS, etc
+- [x]API endpoint access and parsing
+- [x]BFF artifact completed
+- [x]Front-end artifact completed
+- []Unit test generated (at least 60% coverage)
+- []Containerization of the solution (Docker)
+
 ## **Pages that are nice to have**
 
 - Create Account

@@ -17,9 +17,7 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en">
-      {" "}
       <head>
-        <link rel="shortcut icon" href="/favicon.ico" />
         <title>British Airways</title>
       </head>
       <body className={inter.className}>
