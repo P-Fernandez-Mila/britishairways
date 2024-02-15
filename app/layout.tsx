@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/app/favicon.ico" />
         <title>British Airways</title>
       </head>
       <body className={inter.className}>

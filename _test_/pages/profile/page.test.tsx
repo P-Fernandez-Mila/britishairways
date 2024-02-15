@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import { describe } from "node:test";
 import fetchMock from "jest-fetch-mock";
 import userEvent from "@testing-library/user-event";
-import Profile from "@/profile/page";
+import Profile from "../../../app/profile/page";
 import { profileMock } from "../../../_mocks_/profile";
 import {
   CONTACT_INFORMATION,

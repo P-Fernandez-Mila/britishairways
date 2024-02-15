@@ -27,7 +27,6 @@ Login is dummy, any input will change a flag that tracks if the user is logged i
 ## **Design**
 
 <img src="/image.png" alt="image" width="50%" height="auto">
-TODO
 Check design sketch vs actual implementation
 
 ## **Quick start**

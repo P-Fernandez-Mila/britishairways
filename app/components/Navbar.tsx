@@ -107,7 +107,7 @@ const NavBar: FC = () => {
 
   return (
     <div className="w-full flex items-top p-5 bg-">
-      <div className="flex items-start max-w-44">
+      <div className="flex items-start grow max-w-64">
         <Link href="/" className="cursor-pointer">
           <img
             src="/images/640px-British_Airways_Logo.svg.png"
@@ -123,7 +123,7 @@ const NavBar: FC = () => {
             src={avatarSource}
             className="flex-none order-last"
             size="50"
-            round="10px"
+            round={true}
           />
         </div>
       </Dropdown>
