@@ -47,18 +47,18 @@ Coverage report can be triggered by `npm coverage`
 - Add a DB, to allow users create account and an actual login
 - Login dummy, implement an authentication method that saves session on local storage.
 - Data is not linked properly, the data is mocked so the trace between PNR and flights is not present, data is used to simulate the UI but without real data, may be solved with a DB
-- Search is hardcoded to check if the entered last name and pnr exist on the current endpoint response, if exist the endpoint is called and the data is retrieved, if not the system calls the 404 endpoint
+- Search is hardcoded to check if the entered last name and pnr exist on the current endpoint response, if exist the endpoint is called, the data is retrieved and filtered by the entered value. Else the system calls the 404 endpoint
 - Containerization of the solution, I need to learn to use docker first
 
 ## **Milestones**:
 
 - [x] README documentation
-- [x]Project setup: setup environment: react or react-native, NextJS, etc
-- [x]API endpoint access and parsing
-- [x]BFF artifact completed
-- [x]Front-end artifact completed
-- []Unit test generated (at least 60% coverage)
-- []Containerization of the solution (Docker)
+- [x] Project setup: setup environment: react or react-native, NextJS, etc
+- [x] API endpoint access and parsing
+- [x] BFF artifact completed, this is the first time that I implement a BFF surely there is a lot to improve here
+- [x] Front-end artifact completed, styles need to be improved but is not a priority
+- [] Unit test generated (at least 60% coverage)
+- [] Containerization of the solution (Docker)
 
 ## **Pages that are nice to have**
 
