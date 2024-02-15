@@ -1,7 +1,7 @@
 "use client";
 import React, { FC, useContext, MouseEvent } from "react";
-import { Avatar, Dropdown, MenuProps } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { Dropdown, MenuProps } from "antd";
+import Avatar from "react-avatar";
 import Link from "next/link";
 import { LoginStateContext } from "@/utils/LoginState";
 import { useRouter } from "next/navigation";
@@ -79,7 +79,7 @@ const NavBar: FC = () => {
     {
       key: "5",
       label: (
-        <Link target="_self" rel="noopener noreferrer" href="">
+        <Link target="_self" rel="noopener noreferrer" href="/search">
           Search
         </Link>
       ),
@@ -101,10 +101,12 @@ const NavBar: FC = () => {
 
   const items: MenuProps["items"] = isLogged ? loggedItems : guestItems;
 
-  const avatarSource: string | null = isLogged ? "/images/avatar.webp" : null;
+  const avatarSource: string = isLogged
+    ? "images/avatar.webp"
+    : "/images/guest.jpeg";
 
   return (
-    <div className="w-full flex items-top p-5">
+    <div className="w-full flex items-top p-5 bg-">
       <div className="flex items-start max-w-44">
         <Link href="/" className="cursor-pointer">
           <img
@@ -120,10 +122,8 @@ const NavBar: FC = () => {
           <Avatar
             src={avatarSource}
             className="flex-none order-last"
-            size={50}
-            icon={<UserOutlined />}
-            alt="profile picture"
-            style={{ backgroundColor: "rgb(58, 94, 149)", color: "#FFFFFF" }}
+            size="50"
+            round="10px"
           />
         </div>
       </Dropdown>
