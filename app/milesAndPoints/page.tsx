@@ -24,7 +24,7 @@ interface MilesAndPoints {
   travelHistory: Travel[];
 }
 
-const Profile: React.FC = () => {
+const MilesAndPoints: React.FC = () => {
   const [milesAndPoints, setMilesAndPoints] = useState<MilesAndPoints | null>(
     null
   );
@@ -93,26 +93,37 @@ const Profile: React.FC = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-4">Frequent Flyer Profile</h1>
+      <h1 className="text-2xl font-bold mb-4">Miles and Points</h1>
       <div className="bg-blue-100 p-4 flex flex-col ">
         {milesAndPoints ? (
           <>
             <p className="mb-2">
-              <span className="font-bold">Tier Status:</span>{" "}
-              {milesAndPoints?.tierStatus}
+              <span className="font-bold" data-testid="tier-label">
+                Tier Status:
+              </span>
+              <span data-testid="tier-value">{milesAndPoints?.tierStatus}</span>
             </p>
             <p className="mb-2">
-              <span className="font-bold">Miles Balance:</span>{" "}
-              {milesAndPoints?.milesBalance}
+              <span className="font-bold" data-testid="miles-label">
+                Miles Balance:
+              </span>
+              <span data-testid="miles-value">
+                {milesAndPoints?.milesBalance}
+              </span>
             </p>
             <p className="mb-2">
-              <span className="font-bold">Points Balance:</span>{" "}
-              {milesAndPoints?.pointsBalance}
+              <span className="font-bold" data-testid="points-label">
+                Points Balance:
+              </span>
+              <span data-testid="points-value">
+                {milesAndPoints?.pointsBalance}
+              </span>
             </p>
             <Link
               href={createLoyaltyURL(milesAndPoints?.tierStatus)}
               className="text-blue-500 w-full"
               target="_blank"
+              data-testid="benefits-link"
             >
               Check your benefits!
             </Link>
@@ -138,4 +149,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default MilesAndPoints;

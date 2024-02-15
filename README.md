@@ -57,7 +57,7 @@ Coverage report can be triggered by `npm coverage`
 - [x] API endpoint access and parsing
 - [x] BFF artifact completed, this is the first time that I implement a BFF surely there is a lot to improve here
 - [x] Front-end artifact completed, styles need to be improved but is not a priority
-- [ ] Unit test generated (at least 60% coverage)
+- [x] Unit test generated (at least 60% coverage)
 - [ ] Containerization of the solution (Docker)
 
 ## **Pages that are nice to have**

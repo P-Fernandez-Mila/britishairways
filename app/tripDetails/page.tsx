@@ -5,7 +5,6 @@ import {
   SERVER_RESPONSE_ERROR,
   SERVER_RESPONSE_UNEXPECTED_ERROR,
 } from "../utils/constants/strings";
-import { Alert, Spin } from "antd";
 import { passengerTypeConverter } from "../utils/passengerTypeConverter";
 import Loader from "@/components/Loader";
 import ErrorReturnToHome from "@/components/ErrorReturnToHome";

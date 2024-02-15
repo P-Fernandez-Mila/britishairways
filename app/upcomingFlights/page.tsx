@@ -19,7 +19,7 @@ interface Flight {
 
 type UpComingFlights = Flight[];
 
-const Profile: React.FC = () => {
+const UpcomingFlights: React.FC = () => {
   const [upComingFlights, setUpComingFlights] =
     useState<UpComingFlights | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -93,4 +93,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default UpcomingFlights;

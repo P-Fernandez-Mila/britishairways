@@ -78,15 +78,20 @@ const ItineraryList: React.FC = () => {
       <div className="bg-white shadow-md rounded-lg p-6">
         <h1 className="text-2xl font-bold mb-4">My trips</h1>
         <p className="mb-2">
-          <strong>Name:</strong> {myTrips.passenger.firstName}
+          <strong data-testid={"name-label"}>Name:</strong>
+          <span data-testid={"name-value"}>{myTrips.passenger.firstName}</span>
         </p>
         <p className="mb-2">
-          <strong>Lastname:</strong>
-          {myTrips.passenger.lastName}
+          <strong data-testid={"lastname-label"}>Lastname:</strong>
+          <span data-testid={"lastname-value"}>
+            {myTrips.passenger.lastName}
+          </span>
         </p>
         <p className="mb-4">
-          <strong>Passenger Type:</strong>{" "}
-          {passengerTypeConverter(myTrips.passenger.passengerType)}
+          <strong data-testid={"passenger-label"}>Passenger Type:</strong>
+          <span data-testid={"passenger-value"}>
+            {passengerTypeConverter(myTrips.passenger.passengerType)}
+          </span>
         </p>
 
         <Trips trips={myTrips.trips} />

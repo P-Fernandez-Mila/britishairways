@@ -18,5 +18,9 @@ describe("Login Page", () => {
     expect(passwordLabel).toBeInTheDocument();
     fireEvent.change(userLabel, { target: { value: "Bart" } });
     expect(userLabel.value).toBe("Bart");
+    fireEvent.change(passwordLabel, { target: { value: "Simpson" } });
+    expect(passwordLabel.value).toBe("Simpson");
+    const submitButton = screen.getByRole("button", { name: /submit/i });
+    fireEvent.click(submitButton);
   });
 });

@@ -56,7 +56,7 @@ const NavBar: FC = () => {
       key: "2",
       label: (
         <Link target="_self" rel="noopener noreferrer" href="/upcomingFlights">
-          Upcoming Trips
+          Upcoming Flights
         </Link>
       ),
     },
