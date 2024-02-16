@@ -92,9 +92,9 @@ const MilesAndPoints: React.FC = () => {
     );
 
   return (
-    <div>
+    <section className="bg-white flex flex-col items-center gap-4 pt-4">
       <h1 className="text-2xl font-bold mb-4">Miles and Points</h1>
-      <div className="bg-blue-100 p-4 flex flex-col ">
+      <div className="p-4 flex flex-col ">
         {milesAndPoints ? (
           <>
             <p className="mb-2">
@@ -145,7 +145,7 @@ const MilesAndPoints: React.FC = () => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,0 +1,24 @@
+//This component was created to fix an issue related with the styles when the page loads, is related to NextJS and Antd
+
+"use client";
+
+import React from "react";
+import { useServerInsertedHTML } from "next/navigation";
+import { StyleProvider, createCache, extractStyle } from "@ant-design/cssinjs";
+
+export default function AntdStyledComponentsRegistry({
+  children,
+}: {
+  children: React.ReactNode,
+}) {
+  const [cache] = React.useState(() => createCache()); // gets antd cached styles
+
+  useServerInsertedHTML(() => (
+    <style
+      id="antd"
+      dangerouslySetInnerHTML={{ __html: extractStyle(cache, true) }}
+    ></style>
+  ));
+
+  return <StyleProvider cache={cache}>{children}</StyleProvider>;
+}

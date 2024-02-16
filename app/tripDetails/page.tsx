@@ -96,13 +96,13 @@ const TripDetails: React.FC = () => {
   if (error) return <ErrorReturnToHome error={error} />;
   if (!tripDetails)
     return (
-      <div>
+      <section className="flex flex-col items-center gap-4 p-8">
         <p>No trips found</p>
-      </div>
+      </section>
     );
   return (
-    <>
-      <h1 className="text-2xl font-bold">Trip Details</h1>{" "}
+    <section className="bg-white flex flex-col items-center gap-4 p-8">
+      <h1 className="text-2xl font-bold">Trip Details</h1>
       <div className="p-4 mb-100px">
         <div className="border border-gray-300 rounded p-4 mb-4">
           <p>PNR: {tripDetails.pnr}</p>
@@ -163,7 +163,7 @@ const TripDetails: React.FC = () => {
           ))}
         </ul>
       </div>
-    </>
+    </section>
   );
 };
 

@@ -4,7 +4,6 @@ import { Button, Checkbox, Form, Input } from "antd";
 import { LoginStateContext } from "@/utils/LoginState";
 import { useRouter } from "next/navigation";
 
-
 type FieldType = {
   username?: string;
   password?: string;
@@ -20,16 +19,15 @@ const Login: React.FC = () => {
   };
 
   return (
-    <>
-      <div className="min-h-300px p-20 bg-[#6ebadd6f] m-5 rounded-lg">
+    <section className="bg-white justify-center ">
+      <div className=" m-5 rounded-lg">
         <Form
           name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
           style={{ maxWidth: 600 }}
           initialValues={{ remember: true }}
           autoComplete="off"
           onFinish={onFinish}
+          className="flex items-center flex-col"
         >
           <Form.Item<FieldType>
             label="Username"
@@ -47,22 +45,18 @@ const Login: React.FC = () => {
             <Input.Password />
           </Form.Item>
 
-          <Form.Item<FieldType>
-            name="remember"
-            valuePropName="checked"
-            wrapperCol={{ offset: 8, span: 16 }}
-          >
+          <Form.Item<FieldType> name="remember" valuePropName="checked">
             <Checkbox style={{ color: "rgb(58 94 149)" }}>Remember me</Checkbox>
           </Form.Item>
 
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+          <Form.Item>
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
           </Form.Item>
         </Form>
       </div>
-    </>
+    </section>
   );
 };
 

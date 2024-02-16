@@ -105,12 +105,12 @@ const Profile: React.FC = () => {
   if (loading) return <Loader />;
 
   return error ? (
-    <div>
+    <section className="bg-white justify-center">
       <ErrorReturnToHome error={error} />
-    </div>
+    </section>
   ) : (
-    <section>
-      <h1 className="m-10 w-100">Frequent Flyer Profile</h1>
+    <section className="bg-white justify-center flex flex-col p-10 gap-4">
+      <h1 className="w-100">Frequent Flyer Profile</h1>
       <Alert
         message="On this version, the information can not be updated, if you want to update your information visit one of our stores"
         type="info"

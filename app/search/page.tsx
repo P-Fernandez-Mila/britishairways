@@ -91,10 +91,8 @@ const ItineraryList: React.FC = () => {
   }
   useEffect(() => {}, [myTrips, error]);
 
-  if (loading) return <Loader />;
-
   return (
-    <section>
+    <section className="bg-white flex flex-col items-center gap-4 p-8">
       <h1>Search</h1>
       <Form
         name="basic"
@@ -133,6 +131,7 @@ const ItineraryList: React.FC = () => {
         message="In this version, only the last name 'Simpson'&#10; and these PNRs return results: [ZT1234, ZT2345, ZT3456, ZT4567, ZT5678]."
         type="info"
       />
+      {loading && <Loader />}
       {error && <Alert message={error} type="error" />}
       {myTrips && (
         <div className="container mx-auto p-4">

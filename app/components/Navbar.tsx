@@ -36,7 +36,7 @@ const NavBar: FC = () => {
     {
       key: "3",
       label: (
-        <a target="_self" rel="noopener noreferrer" href="/Search">
+        <a target="_self" rel="noopener noreferrer" href="/search">
           Search
         </a>
       ),
@@ -103,7 +103,7 @@ const NavBar: FC = () => {
 
   const avatarSource: string = isLogged
     ? "images/avatar.webp"
-    : "/images/guest.jpeg";
+    : "/images/menu.svg";
 
   return (
     <div className="w-full flex items-top p-5 bg-">
@@ -122,8 +122,8 @@ const NavBar: FC = () => {
           <Avatar
             src={avatarSource}
             className="flex-none order-last"
-            size="50"
-            round={true}
+            size={isLogged ? "50" : "30"}
+            round={isLogged}
           />
         </div>
       </Dropdown>

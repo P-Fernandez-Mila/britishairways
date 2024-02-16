@@ -50,7 +50,7 @@ const UpcomingFlights: React.FC = () => {
   if (loading) return <Loader />;
   if (error) return <ErrorReturnToHome error={error} />;
   return (
-    <section>
+    <section className="bg-white flex flex-col items-center gap-4 p-8">
       <div className=" w-full">
         <h1>Upcoming Flights</h1>
 
