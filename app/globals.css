@@ -127,6 +127,7 @@ a {
   .content-wrapper {
     overflow: visible;
     max-width: 100vw;
+    background-size: cover;
   }
   .children-wrapper {
     width: 800px;

@@ -20,6 +20,7 @@ const Login: React.FC = () => {
 
   return (
     <section className="bg-white justify-center ">
+      <h1 className="text-2xl font-bold mb-4 text-center w-full">Login</h1>
       <div className=" m-5 rounded-lg">
         <Form
           name="basic"
