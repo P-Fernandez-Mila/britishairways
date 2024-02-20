@@ -95,7 +95,7 @@ const ItineraryList: React.FC = () => {
     <section className="bg-white flex flex-col items-center gap-4 p-8">
       <h1>Search</h1>
       <Form
-        name="basic"
+        name="search"
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
         style={{ maxWidth: 600 }}

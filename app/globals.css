@@ -1,11 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html,
-body,
-main {
-}
-
 .content-wrapper {
   background-image: url("../public/images/background.jpeg");
   background-size: auto 100%;
@@ -93,6 +88,10 @@ a {
   color: rgb(58 94 149);
   text-align: left;
   font-size: 1.125rem;
+}
+
+.ant-form-item-required {
+  margin-right: 60px;
 }
 
 .css-dev-only-do-not-override-1b0bdye {
